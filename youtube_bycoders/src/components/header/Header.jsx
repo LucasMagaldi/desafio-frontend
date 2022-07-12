@@ -7,9 +7,6 @@ import { FiMenu } from 'react-icons/fi';
 import {OAuthGoogle} from '../../services/axiosApi'
 
 import './header.css';
-import { useEffect } from 'react';
-
-
 
 
 
@@ -47,24 +44,20 @@ const Header = () => {
             name="search"
           />  
         </div>
-
-        
-
-        
-         
+          
         <div id='authentication'>
           {
            !userName ?
            <div>
-             <button onClick={loadToken} id='start_session_btn'>Start Session</button>
-             <button onClick={getToken} name="signInBtn" id="signInBtn">Sign-In with Google</button>        
+             <button onClick={loadToken} className='start_session_btn signs_buttons'>Start Session</button>
+             <button onClick={getToken} name="signInBtn" id="signInBtn" className='signs_buttons'>Sign-In with Google</button>        
            </div>              
             :
             <div className='user_authenticated'>
               <img src={userPhoto} alt={userName} />
               <h5>Wellcome, {userName}</h5>
 
-              <button onClick={signOff}>Sign Off</button> 
+              <button onClick={signOff} className="signs_buttons">Sign Off</button> 
             </div>
           }
                 

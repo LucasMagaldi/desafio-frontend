@@ -23,11 +23,11 @@ const Content = () => {
 
   useEffect(() => {
       const loadPopular = async () => {
-       await getPopularVideos();
-       await getCategories();
-       await getComedy();
-       await getSports();
-       await getScience();
+     //  await getPopularVideos();
+     //  await getCategories();
+      // await getComedy();
+      // await getSports();
+      // await getScience();
       }
 
       loadPopular();
