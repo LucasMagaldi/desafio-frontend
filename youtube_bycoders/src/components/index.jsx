@@ -1,0 +1,13 @@
+import Header from "./header/Header";
+import SideBar from "./sideBar/SideBar";
+import Search from "./search/Search";
+import Content from "./content/Content";
+import Feature from "./feature/Feature";
+import Carrousel from "./carrousel/Carrousel";
+import ContentSmall from "./contentSmall/ContentSmall";
+import SearchList from "./searchList/SearchList";
+import Channels from "./channels/Channels";
+import Upload from "./upload/Upload";
+
+
+export { Header, SideBar, Search, Content, Feature, Carrousel, ContentSmall, SearchList, Channels, Upload };

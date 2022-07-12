@@ -1,0 +1,72 @@
+.carrousel_container {
+    margin: 1px 0px 1px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.carrousel_container button {
+    border: none;
+    background: transparent;
+}
+
+.carrousel_container .scroll {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.videos_section {
+    margin: 10px;
+    width: 180vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.videos_section::-webkit-scrollbar {
+    display: none;
+}
+
+.video_item {
+    margin: 10px;
+}
+
+.video_item img {
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.video_item img:hover {
+    width: 400px;
+}
+
+.video_item h5 {
+    padding: 5px;
+    color: #fff;
+}
+
+.video_item h6 {
+    padding: 5px 5px 2px 5px;
+    color: rgb(88, 83, 83);
+}
+
+
+
+
+
+.videos_section_small {
+    margin: 10px;
+    width: 150vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.videos_section_small::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,12 @@
+.video_item {
+    cursor: pointer;
+    transition: all 4s ease-in-out;
+    margin: 10px;
+}
+
+.video_item:hover img {
+    z-index: 1;
+    
+    width: 400px;
+    height: 250px;
+}
