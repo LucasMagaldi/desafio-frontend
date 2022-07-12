@@ -13,11 +13,11 @@ const App = () => {
     
       const currentPath = window.location.href;
       if( currentPath.length <=50 ) {
-        document.getElementById("start_session_btn").style.display = "none"
+        
         localStorage.setItem("withCredentials", false);
       }else{
         localStorage.setItem("withCredentials", true);
-        document.getElementById("signInBtn").style.display = "none"
+        
       }
 
     GoogleAuth();
