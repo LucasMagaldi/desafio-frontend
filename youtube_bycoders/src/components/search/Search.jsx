@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { SearchContext } from '../../contexts/SearchContext';
 import './search.css'
 
 const Search = ({type, placeholder, name}) => {
@@ -14,17 +13,16 @@ const Search = ({type, placeholder, name}) => {
   }
 
   return (
-    <div className="">
+    <div className="searchComponent_container">
       <input
         className='form_input'
         type={type}
         placeholder={placeholder}
         name={name}
-        id="search"
         onChange={handleSearch}
       />
 
-      <button onClick={submitSearch}  className="search_button"><h4>search</h4></button>
+      <button onClick={submitSearch}  className="search_button"><span>Find Here</span></button>
     </div>
   )
 }
