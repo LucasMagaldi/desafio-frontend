@@ -26,7 +26,7 @@ const SideBar = () => {
               <AiFillVideoCamera />
               <p>Videos</p>
             </a>
-              <a href="" className='sidebar_links'>
+              <a href="/channel/list" className='sidebar_links'>
                 <AiOutlineFundProjectionScreen />
                 <p>Channels</p>
               </a>
@@ -51,7 +51,7 @@ const SideBar = () => {
               <AiFillVideoCamera />
               <p>Videos</p>
             </a>
-            <a href="" className='item_icons'>
+            <a href="/channel/list" className='item_icons'>
               <AiOutlineFundProjectionScreen />
               <p>Channels</p> 
             </a>

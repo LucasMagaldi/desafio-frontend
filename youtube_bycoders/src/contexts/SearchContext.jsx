@@ -19,7 +19,7 @@ const SearchContextProvider = ({children}) => {
           maxResults: 20
           }
         });
-
+        console.log(res)
         let items = res.data.items;
         setSearchItems(items);
       }

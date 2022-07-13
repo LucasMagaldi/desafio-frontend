@@ -10,65 +10,59 @@ const ContentContextProvider = ({children}) => {
   const [sportsVideos, setSportsVideos] = useState([]);
   const [scienceVideos, setScienceVideos] = useState([]);
 
-  useEffect(() => {
-      const loadPopular = async () => {
-        await getPopularVideos();
-        await getCategories();
-        await getComedy();
-        await getSports();
-        await getScience();
-      }
 
-      loadPopular();
-      
-  }, [])
-
-  const getPopularVideos = async() => {
-      const res = await mainAPI.get('/videos', {
+  const getPopularVideos = async () => {
+      const res =  await mainAPI.get('/videos', {
         params: {
           chart: "mostPopular",
           maxResults: 12,
         }
       });
+      console.log("Popular");
+      console.log(res)
       let popularList = res.data.items;
       setPopularVideos(popularList);
       if ((!popularList ||!popularList.length)) return null
     }
 
 
-    const getCategories = async() => {
-      const res = await mainAPI.get('/videoCategories', {
+    const getCategories = async () => {
+      const res =  await mainAPI.get('/videoCategories', {
         params: {
           regionCode: "BR"
         }
       });
     }
 
-    const getComedy = async () => {
-      const res = await mainAPI.get('/videos', {
+    const getComedy =  async () => {
+      const res =  await mainAPI.get('/videos', {
         params: {
           chart: "mostPopular",
           videoCategoryId: "23",
           maxResults: 12,
         }
       });
+      console.log("Comedy");
+      console.log(res)
       let comedyList = res.data.items;
       setComedyVideos(comedyList);
     }
 
-    const getSports = async () => {
-      const res = await mainAPI.get('/videos', {
+    const getSports =  async () => {
+      const res =  await mainAPI.get('/videos', {
         params: {
           chart: "mostPopular",
           videoCategoryId: "17",
           maxResults: 12,
         }
       });
+      console.log(res)
+      console.log("Sports");
       let sportsList = res.data.items;
       setSportsVideos(sportsList);
     }
 
-    const getScience = async () => {
+    const getScience =  async () => {
       const res = await mainAPI.get('/videos',{
         params: {
           chart: "mostPopular",
@@ -76,8 +70,9 @@ const ContentContextProvider = ({children}) => {
           maxResults: 12,
         }
       });
+      console.log(res)
+      console.log("Science");
       let scienceList = res.data.items;
-   
       setScienceVideos(scienceList);
     }
 

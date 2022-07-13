@@ -6,8 +6,8 @@ import Feature from "./feature/Feature";
 import Carrousel from "./carrousel/Carrousel";
 import ContentSmall from "./contentSmall/ContentSmall";
 import SearchList from "./searchList/SearchList";
-import Channels from "./channels/Channels";
+import Subscription from "./subscription/Subscription";
 import Upload from "./upload/Upload";
 
 
-export { Header, SideBar, Search, Content, Feature, Carrousel, ContentSmall, SearchList, Channels, Upload };
+export { Header, SideBar, Search, Content, Feature, Carrousel, ContentSmall, SearchList, Subscription, Upload };

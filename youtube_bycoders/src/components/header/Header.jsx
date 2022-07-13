@@ -61,7 +61,7 @@ const Header = () => {
            !userName ?
            <div className='oauth_section'>
              <button onClick={loadToken} className='start_session_btn signs_buttons' id="start_session">Start Session</button>
-             <AiOutlineArrowLeft />
+            
              <button onClick={Auth} name="signInBtn" id="signInBtn" className='signs_buttons'>Sign-In with Google</button>        
            </div>              
             :

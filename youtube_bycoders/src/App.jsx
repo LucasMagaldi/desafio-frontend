@@ -31,7 +31,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />  
             <Route path='/search' element={<SearchPage />}/>  
-            <Route path='/subscription/list' element={<SubscriptionPage/>}/>
+            <Route path='/channel/list' element={<SubscriptionPage/>}/>
             <Route path='/post/upload' element={<UploadPage/>} />
             <Route path='*' element={<Error/>} />
           </Routes>       

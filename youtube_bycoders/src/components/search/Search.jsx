@@ -5,15 +5,15 @@ import './search.css'
 const Search = ({type, placeholder, name}) => {
  
 
-  const { setSearchValue, setSearchBarItems, searchBarItems } = useContext(SearchContext);
+  const { setSearchValue } = useContext(SearchContext);
 
   const submitSearch = async() => {
-    const searchID = document.getElementById('search').value;
-
-    setSearchBarItems(searchID);
-    await setSearchValue(searchID);
-
     window.location.href = '/search'
+  }
+
+  const handleSearch = (e) => {
+    console.log(e.currentTarget.value)
+    setSearchValue(e.currentTarget.value)
   }
 
   return (
@@ -24,9 +24,10 @@ const Search = ({type, placeholder, name}) => {
         placeholder={placeholder}
         name={name}
         id="search"
+        onChange={handleSearch}
       />
 
-      <button onClick={submitSearch} className="search_button"><h4>search</h4></button>
+      <button onClick={submitSearch}  className="search_button"><h4>search</h4></button>
     </div>
   )
 }

@@ -21,15 +21,17 @@ const Content = () => {
   } = useContext(ContentContext);
   const { sidebarExtend } = useContext(SidebarContext);
 
-  useEffect(() => {
-      const loadPopular = async () => {
-     //  await getPopularVideos();
-     //  await getCategories();
-      // await getComedy();
-      // await getSports();
-      // await getScience();
-      }
+  const loadPopular = () => {
+        getPopularVideos();
+        getCategories();
+        getComedy();
+        getSports();
+        getScience();
+        }
 
+        
+
+  useEffect(() => {
       loadPopular();
       authenticateOauth();
       
