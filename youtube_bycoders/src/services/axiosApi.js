@@ -35,7 +35,7 @@ const mainAPIOauth = axios.create({
 });
 
 const OAuthGoogle = async () => {
-    window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http://localhost:3000&response_type=token&client_id=AIzaSyCC3eCLXPAaf2S8fx7uTforx3XMjbqPt3Y&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.channel-memberships.creator+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.upload+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutubepartner+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutubepartner-channel-audit&access_type=online'
+    window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http://localhost:3000&response_type=token&client_id=${credentials.web.client_id}&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.channel-memberships.creator+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.force-ssl+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.upload+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutubepartner+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutubepartner-channel-audit&access_type=online`
 }
 
 export {OAuthGoogle, mainAPIOauth}
