@@ -8,19 +8,24 @@ import './subscription.css'
 
 const SubscriptionPage = () => {
 
-    const { authenticate } = useContext(AuthenticationContext);
+    const [authenticate, setAuthenticate] = useState(false)
     const [subscriptions, setSubscriptions] = useState([]);
 
     const getChannels = async() => {
       const id = localStorage.getItem("userId")
-        const res = await mainAPIOauth.get('/channels', {
+        try {
+          const res = await mainAPIOauth.get('/subscriptions', {
             params: {
-                id: id,
+                channelId: id,
                 maxResults: 20,
               }
         });
         console.log(res.data.items)
         setSubscriptions(res.data.items)
+        } catch (error) {
+          setAuthenticate(true)
+          
+        }
         
     }
 
@@ -35,9 +40,9 @@ const SubscriptionPage = () => {
   return (
     <SidebarContextProvider>
       <Header />
-      <div className='subscription_container'>
+      <div className=''>
         <SideBar />
-        <Subscription subscriptions={subscriptions}/>
+        <Subscription subscriptions={subscriptions} authenticate={authenticate}/>
       </div>
     </SidebarContextProvider>
   )

@@ -9,8 +9,7 @@ const SearchContextProvider = ({children}) => {
     const [searchBarItems, setSearchBarItems] = useState([]);
 
 
-    const getSearchResult = async () => {
-        
+    const getSearchResult = async () => {     
         const res = await mainAPI.get('/search', {
           params: {
           q: localStorage.getItem('search'),

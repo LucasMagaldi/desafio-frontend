@@ -53,13 +53,12 @@ const Catogory = [
         const id = localStorage.getItem('userId');
 
         const res = await mainAPIOauth.post('/videos', {
-            body: {
+            data: {
                 snippet: {
-                    title: title,
-                    description: description,
-                    tags: ["primeiro"]
+                  categoryId:"17",title:title,channelId:"UCg8vtIYGvMCI3kuo3ASd0Dw",tags:["primeiro"]
                 },
                 status: {
+                  embeddable:false,
                   privacyStatus: privacy
                 }
             }
