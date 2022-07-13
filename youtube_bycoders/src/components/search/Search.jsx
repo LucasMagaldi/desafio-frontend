@@ -4,16 +4,13 @@ import './search.css'
 
 const Search = ({type, placeholder, name}) => {
  
-
-  const { setSearchValue } = useContext(SearchContext);
-
   const submitSearch = async() => {
     window.location.href = '/search'
   }
 
   const handleSearch = (e) => {
+    localStorage.setItem('search', e.currentTarget.value)
     console.log(e.currentTarget.value)
-    setSearchValue(e.currentTarget.value)
   }
 
   return (

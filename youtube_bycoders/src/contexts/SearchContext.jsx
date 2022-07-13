@@ -8,14 +8,12 @@ const SearchContextProvider = ({children}) => {
     const [searchItems, setSearchItems] = useState([]);
     const [searchBarItems, setSearchBarItems] = useState([]);
 
-    const getSearchValue = async () => {
-        console.log(searchValue);   
-    }
 
     const getSearchResult = async () => {
+        
         const res = await mainAPI.get('/search', {
           params: {
-          q: searchValue,
+          q: localStorage.getItem('search'),
           maxResults: 20
           }
         });
@@ -29,8 +27,7 @@ const SearchContextProvider = ({children}) => {
             setSearchBarItems,
             searchBarItems,
             searchValue, 
-            setSearchValue,
-            getSearchValue, 
+            setSearchValue, 
             getSearchResult, 
             searchItems
             }}>

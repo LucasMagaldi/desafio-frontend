@@ -7,11 +7,10 @@ import './searchList.css';
 const SearchList = () => {
 
   const { sidebarExtend } = useContext(SidebarContext);
-  const { getSearchResult, searchItems, getSearchValue } = useContext(SearchContext)
+  const { getSearchResult, searchItems } = useContext(SearchContext)
 
   useEffect(()=> {
     const LoadVideos = async () => {
-      await getSearchValue()
       await getSearchResult();
       console.log(searchItems)
     }
