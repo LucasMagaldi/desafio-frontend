@@ -1,21 +1,22 @@
 import React, {useEffect, useContext} from 'react';
-import mainAPI from '../../services/axiosApi';
+import mainAPI, {mainAPIOauth} from '../../services/axiosApi';
 import {SidebarContextProvider} from '../../contexts/index';
 import {AuthenticationContext} from '../../contexts/AuthenticationContext';
 import { Channels,Header, SideBar, Content } from '../../components/index';
 
-const ChannelsPage = () => {
+const SubscriptionPage = () => {
 
     const { authenticate } = useContext(AuthenticationContext);
 
     const getChannels = async() => {
-        const res = await mainAPI.get('/channels', {
+      const id = localStorage.getItem("userId")
+        const res = await mainAPIOauth.get('/subscriptions', {
             params: {
-                id: "UCeY0bbntWzzVIaj2z3QigXg",
-                maxResults: 12,
+                channelId: id,
+                maxResults: 20,
               }
         });
-    
+        console.log(res)
     }
 
     useEffect(()=> {
@@ -29,8 +30,11 @@ const ChannelsPage = () => {
   return (
     <SidebarContextProvider>
       <Header />
+      <div>
+        <SideBar />
+      </div>
     </SidebarContextProvider>
   )
 }
 
-export default ChannelsPage
+export default SubscriptionPage

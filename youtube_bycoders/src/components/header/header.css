@@ -92,7 +92,7 @@
 
 #authentication button {
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
     border: none;
     background: transparent;
     font-size: 14px;
@@ -133,6 +133,6 @@
     border: 1px solid rgb(242, 75, 75);;
 }
 
-#signInBtn {
-    margin-right: 10px;
+.oauth_section {
+    align-items: center;
 }

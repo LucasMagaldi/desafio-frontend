@@ -1,6 +1,6 @@
 import SearchPage from "./SearchPage/SearchPage";
-import ChannelsPage from "./channelsPage/ChannelsPage";
+import SubscriptionPage from "./subscriptionPage/SubscriptionPage";
 import UploadPage from "./uploadPage/UploadPage";
 import Error from "./errorPage/Error";
 
-export { SearchPage, ChannelsPage, UploadPage, Error }
+export { SearchPage, SubscriptionPage, UploadPage, Error }

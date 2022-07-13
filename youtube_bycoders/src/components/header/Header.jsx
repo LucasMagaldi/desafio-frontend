@@ -2,7 +2,8 @@ import React, { useContext, useRef } from 'react';
 import { SearchContextProvider } from '../../contexts';
 import { SidebarContext } from '../../contexts/SidebarContext';
 import { AuthenticationContext } from '../../contexts/AuthenticationContext';
-import { Search } from '../index'
+import { Search } from '../index';
+import {AiOutlineArrowLeft} from 'react-icons/ai'
 import { FiMenu } from 'react-icons/fi';
 import {OAuthGoogle} from '../../services/axiosApi'
 
@@ -22,6 +23,16 @@ const Header = () => {
 
   const getToken = async () => {     
        await OAuthGoogle();
+  }
+
+  const HiddenSignInButton = async () => {
+      console.log()
+  }
+
+  const Auth = async () => {
+      await getToken();
+      await HiddenSignInButton();
+
   }
 
   const getSearch = async () => {
@@ -48,9 +59,10 @@ const Header = () => {
         <div id='authentication'>
           {
            !userName ?
-           <div>
-             <button onClick={loadToken} className='start_session_btn signs_buttons'>Start Session</button>
-             <button onClick={getToken} name="signInBtn" id="signInBtn" className='signs_buttons'>Sign-In with Google</button>        
+           <div className='oauth_section'>
+             <button onClick={loadToken} className='start_session_btn signs_buttons' id="start_session">Start Session</button>
+             <AiOutlineArrowLeft />
+             <button onClick={Auth} name="signInBtn" id="signInBtn" className='signs_buttons'>Sign-In with Google</button>        
            </div>              
             :
             <div className='user_authenticated'>

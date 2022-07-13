@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState} from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/home/Home';
-import { SearchPage, ChannelsPage, UploadPage, Error } from './pages/index'
+import { SearchPage, SubscriptionPage, UploadPage, Error } from './pages/index'
 import { AuthenticationContext } from './contexts/AuthenticationContext';
 
 const App = () => {
@@ -13,11 +13,11 @@ const App = () => {
     
       const currentPath = window.location.href;
       if( currentPath.length <=50 ) {
-        
+      
         localStorage.setItem("withCredentials", false);
       }else{
         localStorage.setItem("withCredentials", true);
-        
+       
       }
 
     GoogleAuth();
@@ -31,7 +31,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />  
             <Route path='/search' element={<SearchPage />}/>  
-            <Route path='/channels' element={<ChannelsPage/>}/>
+            <Route path='/subscription/list' element={<SubscriptionPage/>}/>
             <Route path='/post/upload' element={<UploadPage/>} />
             <Route path='*' element={<Error/>} />
           </Routes>       

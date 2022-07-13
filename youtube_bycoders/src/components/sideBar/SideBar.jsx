@@ -32,7 +32,7 @@ const SideBar = () => {
               </a>
             
             
-            <a href='' className='sidebar_links'>
+            <a href='subscription/list' className='sidebar_links'>
               <AiOutlineUserAdd />
               <p>Subscription</p>
             </a>
@@ -55,7 +55,7 @@ const SideBar = () => {
               <AiOutlineFundProjectionScreen />
               <p>Channels</p> 
             </a>
-            <a href='' className='item_icons'>
+            <a href='subscription/list' className='item_icons'>
               <AiOutlineUserAdd />
               <p>Subscription</p>           
             </a>

@@ -3,6 +3,7 @@ import { Typography, Button, Form, message, Input, Icon } from 'antd';
 import Dropzone from 'react-dropzone';
 import { mainAPIOauth } from '../../services/axiosApi';
 
+
 import  './upload.css'
 
 const Upload = () => {
@@ -50,15 +51,16 @@ const Catogory = [
         const date = new Date();
         //const Date = date.toISOString();
         const id = localStorage.getItem('userId');
-    
+
         const res = await mainAPIOauth.post('/videos', {
             body: {
                 snippet: {
-                    publishedAt: date.toISOString(),
-                    channelId: id,
                     title: title,
                     description: description,
-                    thumbnails: videoPath
+                    tags: ["primeiro"]
+                },
+                status: {
+                  privacyStatus: privacy
                 }
             }
         })

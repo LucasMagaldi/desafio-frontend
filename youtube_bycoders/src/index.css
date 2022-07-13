@@ -29,6 +29,14 @@ body {
    overflow-x: hidden;
 }
 
+#signInBtn {
+  margin-right: 10px;
+}
+
+#start_session {
+  border: 1px solid rgb(242, 75, 75);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
