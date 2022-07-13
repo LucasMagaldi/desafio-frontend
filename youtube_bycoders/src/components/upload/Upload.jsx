@@ -55,7 +55,7 @@ const Catogory = [
         const res = await mainAPIOauth.post('/videos', {
             data: {
                 snippet: {
-                  categoryId:"17",title:title,channelId:"UCg8vtIYGvMCI3kuo3ASd0Dw",tags:["primeiro"]
+                  categoryId:"17",title:title,channelId: id,tags:["primeiro"]
                 },
                 status: {
                   embeddable:false,

@@ -136,3 +136,15 @@
 .oauth_section {
     align-items: center;
 }
+
+
+
+
+
+
+@media (max-width: 500px) {                                                
+    .main_logo {
+        display: none;
+    }
+
+}

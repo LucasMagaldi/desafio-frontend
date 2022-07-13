@@ -33,6 +33,44 @@
     font-family: var(--roboto-font);
 }
 
+@media (max-width: 700px) {
+    .failed_section {
+        margin-top: 30%;
+        max-width: 60%;
+        left: 25%;
+    }
+
+    .failed_section img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .failed_section h7 {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .failed_section {
+        max-width: 70%;
+        left: 30%;
+        position: fixed;
+    }
+
+    .failed_section img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .failed_section h7 {
+        font-size: 12px;
+    }
+}
+
+
+
+/*  Starting css for channel when user is authenticated  */
 
 .channels_section {
     position: absolute;

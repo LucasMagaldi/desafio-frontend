@@ -14,7 +14,7 @@ const Error = () => {
           <SideBar />
           <div className='error_section'>
               <img src={notFound} alt="page not founded" />
-              <h1>Page Not found. Please provide a valid URL</h1>
+              <h7>Page Not found. Please provide a valid URL</h7>
           </div>
       </div>
     </SidebarContextProvider>
