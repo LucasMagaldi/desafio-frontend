@@ -1,14 +1,12 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useState,useEffect } from 'react';
 import { SearchContextProvider } from '../../contexts';
 import { SidebarContext } from '../../contexts/SidebarContext';
 import { AuthenticationContext } from '../../contexts/AuthenticationContext';
-import { Search } from '../index';
-import {AiOutlineArrowLeft} from 'react-icons/ai'
+import { Search, SignIn } from '../index';
 import { FiMenu } from 'react-icons/fi';
 import {OAuthGoogle} from '../../services/axiosApi'
 
 import './header.css';
-
 
 
 const Header = () => {
@@ -16,28 +14,26 @@ const Header = () => {
   
   const { OpenSideBar} = useContext(SidebarContext);
   const { loadToken, signOff } = useContext(AuthenticationContext);
+  const [authenticate, setAuthenticate] = useState(false);
   const userName = localStorage.getItem("userName");
   const userPhoto = localStorage.getItem("userPicture");
-
-  
 
   const getToken = async () => {     
        await OAuthGoogle();
   }
 
-  const HiddenSignInButton = async () => {
-      console.log()
-  }
-
   const Auth = async () => {
       await getToken();
-      await HiddenSignInButton();
-
   }
 
   const getSearch = async () => {
     window.location.href  = '/'
   }
+
+  useEffect(() => {
+      if(localStorage.getItem("withCredentials") == "true") setAuthenticate(true)
+      
+  },[])
 
   return (
     <SearchContextProvider>
@@ -60,16 +56,14 @@ const Header = () => {
           {
            !userName ?
            <div className='oauth_section'>
-             <button onClick={loadToken} className='start_session_btn signs_buttons' id="start_session">Start Session</button>
-            
-             <button onClick={Auth} name="signInBtn" id="signInBtn" className='signs_buttons'>Sign-In with Google</button>        
+             <SignIn hidden={authenticate} loadToken={loadToken} Auth={Auth}/>        
            </div>              
             :
             <div className='user_authenticated'>
               <img src={userPhoto} alt={userName} />
               <h5>Wellcome, {userName}</h5>
 
-              <button onClick={signOff} className="signs_buttons">Sign Off</button> 
+              <button onClick={signOff} className="signs_buttons">| Sign Off</button> 
             </div>
           }
                 

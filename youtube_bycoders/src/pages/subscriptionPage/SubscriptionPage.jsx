@@ -17,7 +17,7 @@ const SubscriptionPage = () => {
           const res = await mainAPIOauth.get('/subscriptions', {
             params: {
                 channelId: id,
-                maxResults: 20,
+                maxResults: 50,
               }
         });
         console.log(res.data.items)

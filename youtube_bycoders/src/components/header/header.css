@@ -122,15 +122,11 @@
 }
 
 .user_authenticated button {
-    margin-left: 12px;
+    margin-left: 2px;
 }
 
 #create_account {
     margin-right: .8rem;
-}
-
-.signs_buttons {
-    border: 1px solid rgb(242, 75, 75);;
 }
 
 .oauth_section {

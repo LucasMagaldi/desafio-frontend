@@ -12,12 +12,11 @@ const App = () => {
   useEffect(() => {
     
       const currentPath = window.location.href;
-      if( currentPath.length <=50 ) {
-      
-        localStorage.setItem("withCredentials", false);
-      }else{
-        localStorage.setItem("withCredentials", true);
-       
+      if( currentPath.length >=50 ) {
+        localStorage.setItem("withCredentials", true);     
+      }
+      if(localStorage.getItem("withCredentials")=="true") {
+        console.log("After SignIn")
       }
 
     GoogleAuth();
