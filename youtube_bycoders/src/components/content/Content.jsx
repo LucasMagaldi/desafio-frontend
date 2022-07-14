@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { ContentContext } from '../../contexts/ContentContext';
 import { SidebarContext } from '../../contexts/SidebarContext';
 import { authenticateOauth } from '../../services/Authentication';
-import { Feature, Carrousel, ContentSmall } from '../index'
+import { Feature, Carrousel } from '../index'
 
 import './content.css';
 
@@ -53,7 +53,17 @@ const Content = () => {
             
         </div>
       :  
-            <ContentSmall />      
+         <div className='content_container_small'>
+            <div className='highlights_small'>       
+              <Feature />              
+            </div>
+                        
+              <Carrousel item={popularVideos} small={false} />  
+              <Carrousel item={comedyVideos} small={false}/>             
+              <Carrousel item={sportsVideos} small={false}/>               
+              <Carrousel item={scienceVideos} small={false}/>                        
+            
+        </div>     
     } 
     </>
     
