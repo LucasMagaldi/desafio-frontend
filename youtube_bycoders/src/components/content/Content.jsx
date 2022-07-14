@@ -32,7 +32,6 @@ const Content = () => {
 
   useEffect(() => {
       loadPopular();
-      authenticateOauth();
       
   }, [])
  
