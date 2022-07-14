@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { ContentContext } from '../../contexts/ContentContext';
 import { SidebarContext } from '../../contexts/SidebarContext';
-import { authenticateOauth } from '../../services/Authentication';
 import { Feature, Carrousel } from '../index'
 
 import './content.css';
