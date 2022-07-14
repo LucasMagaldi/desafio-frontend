@@ -7,7 +7,11 @@ import './searchList.css';
 const SearchList = () => {
 
   const { sidebarExtend } = useContext(SidebarContext);
-  const { getSearchResult, searchItems } = useContext(SearchContext)
+  const { getSearchResult, searchItems } = useContext(SearchContext);
+
+  const Video = async (videoId) => {
+      window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+  }
 
   useEffect(()=> {
     const LoadVideos = async () => {
@@ -17,7 +21,8 @@ const SearchList = () => {
     
     LoadVideos();
 
-  }, [])
+  }, []);
+
 
   return (
     <div>
@@ -26,9 +31,11 @@ const SearchList = () => {
         <div className='search_container'>
           {searchItems.map((item, key) => (
             <div className='search_item'>
-              <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.title} />
+              <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.title} onClick={Video(item.id.videoId)} />
               <div className='items_information'>
-                <h2>{item.snippet.title}</h2>
+                <a href={`https://www.youtube.com/watch?v=${item.id.videoId}`} target="_blank" rel="noopener noreferrer">
+                    <h2>{item.snippet.title}</h2>
+                </a>
                 <h4>{item.snippet.channelTitle}</h4>
                 <p>{item.snippet.description}</p>
               </div>
@@ -40,16 +47,18 @@ const SearchList = () => {
         :
         <div className='search_container_small'>
           {searchItems.map((item, key) => (
-            <div className='search_item'>
-              <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.title} />
+            <div className='search_item'>        
+                <img src={item.snippet.thumbnails.medium.url} alt={item.snippet.title} onClick={Video(item.id.videoId)} />             
               <div className='items_information'>
-                <h2>{item.snippet.title}</h2>
+                <a href={`https://www.youtube.com/watch?v=${item.id.videoId}`} target="_blank" rel="noopener noreferrer">
+                    <h2>{item.snippet.title}</h2>
+                </a>              
                 <h4>{item.snippet.channelTitle}</h4>
                 { 
                 window.innerWidth <= 750 ?
                   <div>.......</div>
                 :
-                <p className='description_video'>{item.snippet.description}</p>
+                <p className='description_video'>{item.snippet.description}</p>          
               }
                 
               </div>         
