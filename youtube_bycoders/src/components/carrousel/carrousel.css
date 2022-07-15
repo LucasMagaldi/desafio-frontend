@@ -18,6 +18,7 @@
     z-index: 1;
 }
 
+
 .videos_section {
     margin: 10px;
     width: 180vh;
@@ -42,6 +43,10 @@
 
 .video_item img:hover {
     width: 400px;
+}
+
+.video_item a{
+    cursor: pointer;
 }
 
 .video_item h5 {

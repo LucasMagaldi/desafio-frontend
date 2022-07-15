@@ -30,7 +30,9 @@ const Carrousel = ({item, small}) => {
             {item.map((video, key) => (
                 <div className='video_item'>
                     <img src={video.snippet.thumbnails.medium.url} />
-                    <h5>{video.snippet.title}</h5>
+                    <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank">
+                        <h5>{video.snippet.title}</h5>
+                    </a>
                     <span>
                         <h6>{video.snippet.channelTitle}</h6>  
                     </span>
@@ -43,7 +45,10 @@ const Carrousel = ({item, small}) => {
                 {item.map((video, key) => (
                     <div className='video_item'>
                         <img src={video.snippet.thumbnails.medium.url} />
-                        <h5>{video.snippet.title}</h5>
+                        <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank">
+                            <h5>{video.snippet.title}</h5>
+                        </a>
+                        
                         <span>
                             <h6>{video.snippet.channelTitle}</h6>  
                         </span>
