@@ -23,7 +23,7 @@ const Subscription = ({subscriptions, authenticate}) => {
             {subscriptions.map((item, key) => (
               <div className='channels_item'>
                  <a href={`https://www.youtube.com/channel/${item.snippet.resourceId.channelId}`} target="_blank">
-                   <img src={item.snippet.thumbnails.medium.url} />
+                   <img src={item.snippet.thumbnails.medium.url} className="channel_picture"/>
                  </a>
                   
                   <div className='channel_info'>
