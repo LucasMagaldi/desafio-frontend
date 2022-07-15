@@ -1,6 +1,6 @@
 .sidebar_container {
     background: linear-gradient(to bottom, rgb(37, 36, 36), rgb(61, 60, 60));
-    min-height: 100vh;
+    min-height: 100%;
     width: 80px;
     display: flex;
     flex-direction: column;

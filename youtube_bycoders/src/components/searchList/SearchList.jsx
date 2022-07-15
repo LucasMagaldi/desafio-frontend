@@ -54,12 +54,9 @@ const SearchList = () => {
                     <h2>{item.snippet.title}</h2>
                 </a>              
                 <h4>{item.snippet.channelTitle}</h4>
-                { 
-                window.innerWidth <= 750 ?
-                  <div>.......</div>
-                :
+                
                 <p className='description_video'>{item.snippet.description}</p>          
-              }
+             
                 
               </div>         
             </div>
