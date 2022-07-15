@@ -1,4 +1,5 @@
 import React from 'react'
+import './signIn.css'
 
 const SignIn = ({hidden, loadToken, Auth}) => {
   return (
@@ -7,7 +8,7 @@ const SignIn = ({hidden, loadToken, Auth}) => {
          !hidden ?
             <button onClick={Auth}>Sign-in with your Google Acoount</button>
             :
-            <button onClick={loadToken}>Click here to start your Session!</button>
+            <button className='start_session' onClick={loadToken}>Click here to start your Session!</button>
         }
     </>   
   )

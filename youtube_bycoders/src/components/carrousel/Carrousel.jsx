@@ -34,7 +34,10 @@ const Carrousel = ({item, small}) => {
                         <h5>{video.snippet.title}</h5>
                     </a>
                     <span>
-                        <h6>{video.snippet.channelTitle}</h6>  
+                    <a href={`https://www.youtube.com/channel/${video.snippet.channelId}`} target="_blank">
+                        <h6>{video.snippet.channelTitle}</h6>
+                    </a>
+                          
                     </span>
                             
                 </div>
@@ -50,7 +53,9 @@ const Carrousel = ({item, small}) => {
                         </a>
                         
                         <span>
-                            <h6>{video.snippet.channelTitle}</h6>  
+                            <a href={`https://www.youtube.com/channel/${video.snippet.channelId}`} target="_blank">
+                              <h6>{video.snippet.channelTitle}</h6>
+                           </a>
                         </span>
                                 
                     </div>
